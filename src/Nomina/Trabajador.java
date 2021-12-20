@@ -29,8 +29,8 @@ public class Trabajador {
     public Trabajador(String nom, String nif, String grupProf, char grupCot, String nafSS, String fecAnt){
         this.nom=nom;
         this.nif=nif;
-        this.grupProf=grupProf;
-        this.grupCot=grupCot;
+        this.grupProf="Subalternos"; // MODIFICAR por this.grupProf=grupProf cuando se pueda cambiar el grupo profesional
+        this.grupCot=grupCot; 
         this.nafSS=nafSS;
         this.fecAnt=fecAnt;
     }

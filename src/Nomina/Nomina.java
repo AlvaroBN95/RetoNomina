@@ -24,13 +24,18 @@ public class Nomina {
     private double fpAport;
     private double paroAport;
     private double atepAport;
+    private double totalaportdeduccion;
+    
+    public Nomina(){
+        
+    }
     
     public double devengos(char grupCot, double diaLiq){
         if(grupCot=='A'){
-            totalbruto=((30000d/12d)/30d)*diaLiq;
+            totalbruto=((26790.31d/12d)/30d)*diaLiq;
         }
         else{
-            totalbruto=((28000d/12d)/30d)*diaLiq;
+            totalbruto=((25986.59d/12d)/30d)*diaLiq;
         }
         return totalbruto;
     }
@@ -45,9 +50,8 @@ public class Nomina {
         paro=totalbruto*iparo/100;
         fp=totalbruto*ifp/100;
         irpf=totalbruto*iirpf/100;
-        
         adeducir=contcom+paro+fp+irpf;
-        
+        totalaportdeduccion= contcom+paro+fp;
         return adeducir;
     }
     
@@ -55,6 +59,11 @@ public class Nomina {
         totalneto=totalbruto-adeducir;
         return totalneto;
     }
+    
+    public double getContingencias(){ return contcom; }
+    public double getDesempleo(){ return paro; }
+    public double getFP(){ return fp; }
+    public double getTotalAportDeducciones(){ return totalaportdeduccion; }
     
     public double aportEmp(){
         double ibaseSS=23.6;
@@ -70,9 +79,16 @@ public class Nomina {
         FOGASA=totalbruto*iFOGASA/100;
         
         baseirpf=totalbruto;
+        totalaport = baseSS+atepAport+paroAport+fpAport+FOGASA;
         
         return totalaport;
     }
+    
+    public double getBaseSS(){ return baseSS; }
+    public double getAtEp() { return atepAport; }
+    public double getParoAport() { return paroAport; }
+    public double getFpAport() { return fpAport; }
+    public double getFOGASA() { return FOGASA; }
     
     public double getIrpf(){
         return irpf;

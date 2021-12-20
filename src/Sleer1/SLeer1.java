@@ -187,7 +187,7 @@ public class SLeer1 {
             try {
                 cadena = null;
                 c = 0;
-                System.out.print("\n" + mensaje);
+                System.out.print(mensaje);
                 cadena = teclado.nextLine();
                 c = cadena.charAt(0);
                 leido = true;
@@ -211,7 +211,7 @@ public class SLeer1 {
         do {
             try {
                 dato = null;
-                System.out.print("\n" + mensaje);
+                System.out.print(mensaje);
                 dato = teclado.nextLine();
                 leido = true;
             } catch (InputMismatchException e) {
@@ -264,11 +264,11 @@ public class SLeer1 {
         do {
             try {
                 num = 0;
-                System.out.print("\n" + mensaje);
+                System.out.print(mensaje);
                 num = teclado.nextInt();
                 leido = true;
             } catch (InputMismatchException e) {
-                System.err.println("Error, por favor introduce dato de nuevo...");
+                System.err.println("Introduzca un número\n");
                 limpiar();
             }
         } while (leido == false);
